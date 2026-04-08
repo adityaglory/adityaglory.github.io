@@ -3,54 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory Aditya Jauzaulbahi</title>
-
-    <meta name="description" content="Portfolio of Glory Aditya Jauzaulbahi, AI/ML Engineer & Computer Vision Specialist.">
     
+    <title>Glory Aditya Jauzaulbahi</title>
+    <meta name="description" content="Portfolio of Glory Aditya Jauzaulbahi, AI/ML Engineer & Computer Vision Specialist.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://adityaglory.github.io/"> <meta property="og:title" content="Glory Aditya | AI/ML Engineer">
+    <meta property="og:url" content="https://adityaglory.github.io/"> 
+    <meta property="og:title" content="Glory Aditya | AI/ML Engineer">
     <meta property="og:description" content="Engineering graduate specializing in Computer Vision, Generative AI, model deployment & MLOps.">
     <meta property="og:image" content="https://avatars.githubusercontent.com/adityaglory">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: #0a0a0a; 
             color: #a3a3a3; 
         }
-        h1, h2, h3 { 
-            color: #ededed; 
-            font-weight: 500; 
-        }
+        h1, h2, h3 { color: #ededed; font-weight: 500; }
         a { transition: color 0.2s ease; }
         a:hover { color: #ededed; }
+
+        /* KELAS ANIMASI SCROLL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="antialiased max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-16">
+<body class="antialiased max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-20 overflow-x-hidden">
 
-    <header class="space-y-6">
-        <div>
-            <h1 class="text-3xl font-semibold tracking-tight">Glory Aditya Jauzaulbahi</h1>
-            <p class="mt-1 text-neutral-400">AI/ML and Computer Vision Engineer</p>
+    <header class="space-y-8 reveal">
+        <div class="flex flex-col md:flex-row md:items-center gap-6">
+            <img src="https://avatars.githubusercontent.com/adityaglory" alt="Glory Aditya" class="w-24 h-24 rounded-full object-cover border border-neutral-800 shadow-lg">
+            <div>
+                <h1 class="text-3xl font-semibold tracking-tight">Glory Aditya Jauzaulbahi</h1>
+                <p class="mt-1 text-neutral-400">AI & Computer Vision Engineer</p>
+            </div>
         </div>
         
-        <div class="flex flex-wrap gap-4 text-sm font-medium">
+        <div class="flex flex-wrap items-center gap-4 text-sm font-medium">
             <a href="mailto:gloryadityaj@gmail.com" class="underline decoration-neutral-700 underline-offset-4">Email</a>
             <a href="https://linkedin.com/in/gloryadityaj" target="_blank" class="underline decoration-neutral-700 underline-offset-4">LinkedIn</a>
             <a href="https://github.com/adityaglory" target="_blank" class="underline decoration-neutral-700 underline-offset-4">GitHub</a>
+            
+            <a href="CV_Glory_Aditya_Jauzaulbahi.pdf" download="CV_Glory_Aditya_Jauzaulbahi.pdf" class="ml-2 px-4 py-2 bg-neutral-200 text-neutral-900 rounded border border-neutral-200 hover:bg-transparent hover:text-neutral-200 transition-all font-semibold flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download CV
+            </a>
         </div>
 
-        <div class="text-sm md:text-base leading-relaxed space-y-4 pt-4 border-t border-neutral-800">
+        <div class="text-sm md:text-base leading-relaxed space-y-4 pt-6 border-t border-neutral-800">
             <p>Engineering graduate in Biomedical Engineering specializing in Computer Vision, Generative AI, model deployment & MLOps.</p>
             <p>Possesses a foundation and practical background in building end-to-end model pipelines, from dataset curation and preprocessing into model deployment and evaluations, bridging gap between raw data and visual perception.</p>
             <p>Committed to applying mathematical models and engineering method to solve complex data flows and engineering challenges.</p>
         </div>
     </header>
 
-    <section class="space-y-6">
+    <section class="space-y-6 reveal">
         <h2 class="text-xl tracking-tight">Technical Skills</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
             <div><span class="block text-neutral-300 font-medium mb-1">AI & ML Frameworks</span>PyTorch, TensorFlow, Keras, Scikit-learn, LangChain</div>
             <div><span class="block text-neutral-300 font-medium mb-1">Computer Vision</span>OpenCV, MediaPipe, Roboflow, YOLO</div>
             <div><span class="block text-neutral-300 font-medium mb-1">MLOps & Infrastructure</span>Docker, MLflow, Streamlit, GitHub Actions</div>
@@ -58,7 +76,7 @@
         </div>
     </section>
 
-    <section class="space-y-6">
+    <section class="space-y-6 reveal">
         <h2 class="text-xl tracking-tight">Experience & Education</h2>
         <div class="space-y-6 text-sm">
             <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
@@ -76,13 +94,12 @@
         </div>
     </section>
 
-    <section class="space-y-6">
+    <section class="space-y-6 reveal">
         <h2 class="text-xl tracking-tight">Projects</h2>
-        
         <div id="projects-container" class="space-y-8"></div>
     </section>
 
-    <section class="space-y-6 pb-12 border-b border-neutral-800">
+    <section class="space-y-6 pb-12 border-b border-neutral-800 reveal">
         <h2 class="text-xl tracking-tight">Certifications</h2>
         <ul class="space-y-3 text-sm">
             <li class="flex flex-col sm:flex-row sm:justify-between gap-1"><span class="text-neutral-300">Azure AI Fundamentals (AI-900)</span><span class="text-neutral-500">Microsoft, Sep 2025</span></li>
@@ -90,50 +107,46 @@
         </ul>
     </section>
 
-    <footer class="pb-12 text-xs text-neutral-500">
+    <footer class="pb-12 text-xs text-neutral-500 reveal">
         &copy; 2026 Glory Aditya Jauzaulbahi.
     </footer>
 
     <script>
-        // 1. Kita buat variabel penyimpanan data proyek
-        // Kamu bisa mengganti isi 'repoLink' dengan link asli menuju spesifik repository GitHub kamu
+        // 1. Render Projects (Sama seperti sebelumnya)
         const projectsData = [
             {
                 title: "Smart Nutritional OCR",
-                repoLink: "https://github.com/adityaglory/Nutritional-Table-OCR", // Ganti link aslinya di sini!
+                repoLink: "https://github.com/adityaglory/smart-nutritional-ocr", 
                 description: "Engineered a GPU-accelerated Computer Vision OCR pipeline using YOLO & EasyOCR with automated cross-imputation, containerized via Docker.",
                 keyResult: "Automated Metadata Imputation & Scalable Batch Processing"
             },
             {
                 title: "Private Local RAG",
-                repoLink: "https://github.com/adityaglory/local-biomedical-rag", // Ganti link aslinya di sini!
+                repoLink: "https://github.com/adityaglory/private-local-rag", 
                 description: "Built a privacy-first RAG pipeline using Llama 3.2, LangChain, and ChromaDB for offline biomedical document querying.",
                 keyResult: "Reduced retrieval time to under 2s"
             },
             {
                 title: "GANs for Dataset Augmentation",
-                repoLink: "https://github.com/adityaglory/GAN-for-Imbalanced-Dataset", // Ganti link aslinya di sini!
+                repoLink: "https://github.com/adityaglory/gans-medical-augmentation",
                 description: "Conducted novel research addressing class imbalance in medical datasets by architecting custom GANs and VAEs to synthesize data.",
                 keyResult: "Boosted F1-Score to 96% | FID Score 0.2249"
             },
             {
-                title: "Capstone Team Project - Meltion (Melanoma Detection) Android App",
+                title: "Meltion (Melanoma Detection App)",
+                repoLink: "https://github.com/adityaglory/meltion-app", 
                 description: "Preprocessed skin lesion datasets and fine-tuned a ResNet50 model. Collaborated to integrate backend via Google Vertex AI.",
                 keyResult: "78% accuracy in multiclass detection"
             },
             {
                 title: "Emosense (MLOps)",
-                repoLink: "https://github.com/adityaglory/Emosense", // Ganti link aslinya di sini!
+                repoLink: "https://github.com/adityaglory/emosense",
                 description: "End-to-end emotion detection system using Quantized ONNX (INT8), Docker container, and Streamlit UI.",
                 keyResult: "Lightweight & Production-Ready"
             }
         ];
 
-        // 2. Kita cari elemen HTML penampungnya berdasarkan ID
         const container = document.getElementById('projects-container');
-
-        // 3. Kita ubah Data (Array) menjadi elemen HTML menggunakan fungsi map()
-        // Lalu gunakan innerHTML untuk menyisipkannya ke dalam wadah HTML
         container.innerHTML = projectsData.map(project => `
             <div>
                 <div class="flex justify-between items-baseline mb-1">
@@ -143,7 +156,27 @@
                 <p class="text-sm leading-relaxed mb-2">${project.description}</p>
                 <p class="text-xs text-neutral-500">Key Result: ${project.keyResult}</p>
             </div>
-        `).join(''); // join('') digunakan untuk menggabungkan hasil perulangan tanpa ada tanda koma
+        `).join('');
+
+        // 2. Logic untuk Animasi "Fade-in on Scroll"
+        // Menggunakan Intersection Observer API yang sangat ringan
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100; // Seberapa cepat elemen muncul saat di-scroll
+
+            reveals.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add("active");
+                }
+            });
+        }
+
+        // Panggil fungsi sekali saat halaman baru dimuat
+        window.addEventListener("load", reveal);
+        // Panggil fungsi setiap kali di-scroll
+        window.addEventListener("scroll", reveal);
     </script>
 
 </body>
