@@ -6,10 +6,9 @@
     <title>My Projects Experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Sedikit kustomisasi warna agar mirip dengan screenshot kamu */
         body {
-            background-color: #0d1117; /* Warna latar gelap khas GitHub */
-            color: #c9d1d9; /* Warna teks abu-abu terang */
+            background-color: #0d1117; 
+            color: #c9d1d9; 
         }
     </style>
 </head>
@@ -23,58 +22,81 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-blue-500 transition duration-300">
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
                 <h2 class="text-xl font-bold text-white mb-3">Smart Nutritional OCR</h2>
-                <p class="text-sm mb-4 leading-relaxed">
+                <p class="text-sm mb-4 leading-relaxed flex-grow">
                     Engineered a GPU-accelerated Computer Vision OCR pipeline using YOLO & EasyOCR with automated cross-imputation, containerized via Docker.
                 </p>
-                <div class="mt-auto pt-4 border-t border-gray-700">
+                <div class="pt-4 border-t border-gray-700 mt-2">
                     <p class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Key Result</p>
-                    <p class="text-sm font-medium text-blue-400 mt-1">Automated Metadata Imputation & Scalable Batch Processing</p>
+                    <p class="text-sm font-medium text-blue-400 mt-1 mb-4">Automated Metadata Imputation & Scalable Batch Processing</p>
+                    
+                    <a href="#" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition duration-200">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                        </svg>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
 
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-blue-500 transition duration-300">
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
                 <h2 class="text-xl font-bold text-white mb-3">Private Local RAG</h2>
-                <p class="text-sm mb-4 leading-relaxed">
+                <p class="text-sm mb-4 leading-relaxed flex-grow">
                     Built a privacy-first RAG pipeline using Ollama (Llama 3), LangChain, and ChromaDB for offline document querying.
                 </p>
-                <div class="mt-auto pt-4 border-t border-gray-700">
+                <div class="pt-4 border-t border-gray-700 mt-2">
                     <p class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Key Result</p>
-                    <p class="text-sm font-medium text-blue-400 mt-1">Completely Local RAG System</p>
+                    <p class="text-sm font-medium text-blue-400 mt-1 mb-4">Completely Local RAG System</p>
+                    <a href="#" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition duration-200">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
 
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-blue-500 transition duration-300">
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
                 <h2 class="text-xl font-bold text-white mb-3">Emosense (MLOps)</h2>
-                <p class="text-sm mb-4 leading-relaxed">
+                <p class="text-sm mb-4 leading-relaxed flex-grow">
                     End-to-end emotion detection system using Quantized ONNX (INT8), Docker container, and Streamlit UI.
                 </p>
-                <div class="mt-auto pt-4 border-t border-gray-700">
+                <div class="pt-4 border-t border-gray-700 mt-2">
                     <p class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Key Result</p>
-                    <p class="text-sm font-medium text-blue-400 mt-1">Lightweight & Production-Ready</p>
+                    <p class="text-sm font-medium text-blue-400 mt-1 mb-4">Lightweight & Production-Ready</p>
+                    <a href="#" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition duration-200">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
 
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-blue-500 transition duration-300">
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
                 <h2 class="text-xl font-bold text-white mb-3">Real-Time Handwashing CV</h2>
-                <p class="text-sm mb-4 leading-relaxed">
+                <p class="text-sm mb-4 leading-relaxed flex-grow">
                     Developed a CV pipeline with MediaPipe and deployed an SVM model for on-device inference.
                 </p>
-                <div class="mt-auto pt-4 border-t border-gray-700">
+                <div class="pt-4 border-t border-gray-700 mt-2">
                     <p class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Key Result</p>
-                    <p class="text-sm font-medium text-blue-400 mt-1">76% Accuracy on Raspberry Pi 4</p>
+                    <p class="text-sm font-medium text-blue-400 mt-1 mb-4">76% Accuracy on Raspberry Pi 4</p>
+                    <a href="#" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition duration-200">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
 
-            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-blue-500 transition duration-300">
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
                 <h2 class="text-xl font-bold text-white mb-3">GANs for Dataset Augmentation</h2>
-                <p class="text-sm mb-4 leading-relaxed">
+                <p class="text-sm mb-4 leading-relaxed flex-grow">
                     Implemented and benchmarked GANs/VAEs to synthesize arterial waveform data.
                 </p>
-                <div class="mt-auto pt-4 border-t border-gray-700">
+                <div class="pt-4 border-t border-gray-700 mt-2">
                     <p class="text-xs text-gray-400 uppercase font-semibold tracking-wider">Key Result</p>
-                    <p class="text-sm font-medium text-blue-400 mt-1">Boosted F1-Score to 96%</p>
+                    <p class="text-sm font-medium text-blue-400 mt-1 mb-4">Boosted F1-Score to 96%</p>
+                    <a href="#" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition duration-200">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
 
