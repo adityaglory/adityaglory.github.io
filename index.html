@@ -1,194 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory Aditya Jauzaulbahi - AI/ML Engineer</title>
+    <title>Glory Aditya Jauzaulbahi | AI/ML Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        brandDark: '#0B1120',
+                        brandCard: '#1E293B',
+                        brandAccent: '#38BDF8'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            background-color: #0d1117; 
-            color: #c9d1d9; 
-        }
-        .section-title {
-            color: #ffffff;
-            border-bottom: 2px solid #30363d;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+        body { background-color: #0B1120; color: #94A3B8; }
+        /* Custom scrollbar untuk detail ekstra */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="font-sans antialiased min-h-screen p-6 md:p-12">
+<body class="antialiased selection:bg-cyan-500 selection:text-white">
 
-    <div class="max-w-5xl mx-auto space-y-16">
-
-        <header class="text-center md:text-left flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
-            <div class="flex-1">
-                <h1 class="text-5xl font-extrabold text-white mb-3">Glory Aditya Jauzaulbahi</h1>
-                <h2 class="text-2xl text-blue-400 font-semibold mb-4">AI/ML Engineer & Computer Vision Specialist</h2>
-                <p class="text-base text-gray-400 leading-relaxed mb-6 max-w-3xl">
-                    Engineering graduate in Biomedical Engineering specializing in Computer Vision, Generative AI, model deployment & MLOps. Possesses a foundation and practical background in building end-to-end model pipelines, from dataset curation and preprocessing into model deployment and evaluations.
-                </p>
-                
-                <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="mailto:gloryadityaj@gmail.com" class="flex items-center bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        Email
-                    </a>
-                    <a href="https://linkedin.com/in/gloryadityaj" target="_blank" class="flex items-center bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/adityaglory" target="_blank" class="flex items-center bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                        GitHub
-                    </a>
-                </div>
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-brandDark/80 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-xl tracking-wider">GLORY<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">.AI</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-cyan-400 transition">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+                <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <section>
-            <h2 class="text-3xl font-bold section-title">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-                    <h3 class="text-white font-semibold mb-2">AI & ML Frameworks</h3>
-                    <p class="text-sm text-gray-400">PyTorch, TensorFlow, Keras, Scikit-learn, LangChain</p>
-                </div>
-                <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-                    <h3 class="text-white font-semibold mb-2">Computer Vision</h3>
-                    <p class="text-sm text-gray-400">OpenCV, MediaPipe, Roboflow, YOLO</p>
-                </div>
-                <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-                    <h3 class="text-white font-semibold mb-2">MLOps & Infrastructure</h3>
-                    <p class="text-sm text-gray-400">Docker, MLflow, Streamlit, GitHub Actions</p>
-                </div>
-                <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-                    <h3 class="text-white font-semibold mb-2">Languages & Cloud</h3>
-                    <p class="text-sm text-gray-400">Python, SQL, Linux, Git/GitHub, Microsoft Azure AI</p>
-                </div>
-            </div>
-        </section>
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-20 space-y-32">
 
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h2 class="text-3xl font-bold section-title">Experience</h2>
-                <div class="mb-6">
-                    <h3 class="text-xl font-bold text-white">AI Research Intern</h3>
-                    <p class="text-blue-400 text-sm mb-2">Pusat Riset Sains Data & Informasi, BRIN | Jul 2022 - Sep 2022</p>
-                    <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
-                        <li>Engineered a CV pipeline with MediaPipe for real-time hand motion classification (1-4 FPS on Raspberry Pi 4).</li>
-                        <li>Documented research from over 6000 hand-wash gesture image sequences.</li>
-                    </ul>
-                </div>
+        <section id="about" class="flex flex-col items-center text-center md:items-start md:text-left pt-10">
+            <div class="inline-block px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-cyan-400 text-sm font-semibold mb-6">
+                🚀 Available for opportunities
             </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">Glory Aditya</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-slate-300 font-medium mb-8 max-w-3xl">
+                AI/ML Engineer & Computer Vision Specialist.
+            </h2>
+            <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mb-10">
+                Biomedical Engineering graduate bridging the gap between raw data and visual perception. I build end-to-end model pipelines—from dataset curation to model deployment and evaluation.
+            </p>
             
-            <div>
-                <h2 class="text-3xl font-bold section-title">Education</h2>
-                <div class="mb-6">
-                    <h3 class="text-xl font-bold text-white">Universitas Gadjah Mada</h3>
-                    <p class="text-blue-400 text-sm mb-2">B.Eng in Biomedical Engineering | Expected Aug 2025</p>
-                    <p class="text-sm text-gray-400">Focus: Biomedical Signal & Image Processing, Biomedical AI.</p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <a href="#projects" class="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:scale-105 transition-transform duration-300 shadow-lg shadow-cyan-500/30">
+                    View My Work
+                </a>
+                <a href="https://github.com/adityaglory" target="_blank" class="px-8 py-3 rounded-lg bg-slate-800 text-white font-semibold hover:bg-slate-700 border border-slate-700 hover:scale-105 transition-transform duration-300 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/gloryadityaj" target="_blank" class="px-8 py-3 rounded-lg bg-slate-800 text-white font-semibold hover:bg-slate-700 border border-slate-700 hover:scale-105 transition-transform duration-300 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <section id="skills" class="relative">
+            <h2 class="text-3xl font-bold text-white mb-10 flex items-center">
+                <span class="w-8 h-[2px] bg-cyan-500 mr-4"></span> Technical Arsenal
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-brandCard p-6 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">🧠</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-4 text-lg">AI & ML</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">PyTorch</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">TensorFlow</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Scikit-learn</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">LangChain</span>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold text-white">Pacmann AI</h3>
-                    <p class="text-blue-400 text-sm mb-2">AI/ML Engineering Bootcamp | Jan 2024 - Mar 2026</p>
+                <div class="bg-brandCard p-6 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">👁️</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-4 text-lg">Computer Vision</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">OpenCV</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">MediaPipe</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">YOLO</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Roboflow</span>
+                    </div>
+                </div>
+                <div class="bg-brandCard p-6 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">⚙️</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-4 text-lg">MLOps</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Docker</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">MLflow</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Streamlit</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">CI/CD</span>
+                    </div>
+                </div>
+                <div class="bg-brandCard p-6 rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition-colors group">
+                    <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">☁️</span>
+                    </div>
+                    <h3 class="text-white font-semibold mb-4 text-lg">Tools & Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">SQL</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Azure AI</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Linux</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2 class="text-3xl font-bold section-title">Projects Experience</h2>
+        <section id="experience">
+            <h2 class="text-3xl font-bold text-white mb-10 flex items-center">
+                <span class="w-8 h-[2px] bg-violet-500 mr-4"></span> Journey
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8 border-l-2 border-slate-800 pl-6 ml-3 relative">
+                    <div class="relative">
+                        <span class="absolute -left-[35px] top-1 w-4 h-4 rounded-full bg-violet-500 ring-4 ring-brandDark"></span>
+                        <h3 class="text-xl font-bold text-white">AI Research Intern</h3>
+                        <p class="text-cyan-400 font-medium mb-3">Pusat Riset Sains Data & Informasi, BRIN <span class="text-slate-500 text-sm ml-2">Jul 2022 - Sep 2022</span></p>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Engineered a CV pipeline with MediaPipe for real-time hand motion classification (1-4 FPS on Raspberry Pi 4). Documented research from over 6000 hand-wash gesture image sequences.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -left-[35px] top-1 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-brandDark"></span>
+                        <h3 class="text-xl font-bold text-white">Capstone Team Project</h3>
+                        <p class="text-cyan-400 font-medium mb-3">Meltion App <span class="text-slate-500 text-sm ml-2">AI Engineer</span></p>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Collaborated closely with mobile developers to integrate pre-trained ResNet50 model and backend via Google Vertex AI for melanoma detection.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-8 border-l-2 border-slate-800 pl-6 ml-3 relative">
+                    <div class="relative">
+                        <span class="absolute -left-[35px] top-1 w-4 h-4 rounded-full bg-cyan-500 ring-4 ring-brandDark"></span>
+                        <h3 class="text-xl font-bold text-white">B.Eng Biomedical Engineering</h3>
+                        <p class="text-violet-400 font-medium mb-2">Universitas Gadjah Mada <span class="text-slate-500 text-sm ml-2">Exp. Aug 2025</span></p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Focus: Biomedical Signal & Image Processing, Biomedical AI.</p>
+                        <h3 class="text-xl font-bold text-white mt-6">AI/ML Engineering Bootcamp</h3>
+                        <p class="text-violet-400 font-medium mb-2">Pacmann AI <span class="text-slate-500 text-sm ml-2">Jan 2024 - Mar 2026</span></p>
+                    </div>
+                    
+                    <div class="relative pt-4">
+                        <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Certifications</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-500 mr-2 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                                <div>
+                                    <p class="text-white font-medium text-sm">Azure AI Fundamentals (AI-900)</p>
+                                    <p class="text-slate-500 text-xs">Microsoft • Sep 2025</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-500 mr-2 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                                <div>
+                                    <p class="text-white font-medium text-sm">GANs Specialization</p>
+                                    <p class="text-slate-500 text-xs">DeepLearning.AI • Aug 2023</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="text-3xl font-bold text-white mb-10 flex items-center">
+                <span class="w-8 h-[2px] bg-cyan-500 mr-4"></span> Featured Projects
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">Meltion (Melanoma Detection)</h3>
-                    <p class="text-sm mb-4 leading-relaxed flex-grow text-gray-400">
-                        Preprocessed ±10000 skin lesion datasets and fine-tuned a ResNet50 model achieving 78% accuracy. Integrated backend via Google Vertex AI.
-                    </p>
-                    <div class="pt-4 border-t border-gray-700 mt-2">
-                        <p class="text-xs text-blue-400 font-semibold mb-4">Google Vertex AI • ResNet50 • Computer Vision</p>
-                        <a href="https://github.com/adityaglory" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition">
-                            View on GitHub
+                <div class="bg-brandCard rounded-2xl p-6 border border-slate-700/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                        </div>
+                        <a href="https://github.com/adityaglory" target="_blank" class="text-slate-500 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                         </a>
                     </div>
-                </div>
-
-                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">Smart Nutritional OCR</h3>
-                    <p class="text-sm mb-4 leading-relaxed flex-grow text-gray-400">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Smart Nutritional OCR</h3>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow leading-relaxed">
                         Engineered a GPU-accelerated Computer Vision OCR pipeline using YOLO & EasyOCR with automated cross-imputation, containerized via Docker.
                     </p>
-                    <div class="pt-4 border-t border-gray-700 mt-2">
-                        <p class="text-xs text-blue-400 font-semibold mb-4">Automated Metadata Imputation & Scalable Batch Processing</p>
-                        <a href="https://github.com/adityaglory/Nutritional-Table-OCR" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition">
-                            View on GitHub
-                        </a>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-blue-400 bg-blue-400/10 px-2 py-1 rounded">YOLO</span>
+                        <span class="text-xs font-medium text-blue-400 bg-blue-400/10 px-2 py-1 rounded">EasyOCR</span>
+                        <span class="text-xs font-medium text-blue-400 bg-blue-400/10 px-2 py-1 rounded">Docker</span>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">Biomedical Local RAG</h3>
-                    <p class="text-sm mb-4 leading-relaxed flex-grow text-gray-400">
-                        Built a privacy-first RAG pipeline using Llama 3.2, LangChain, and ChromaDB for offline biomedical document querying.
+                <div class="bg-brandCard rounded-2xl p-6 border border-slate-700/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        </div>
+                        <a href="https://github.com/adityaglory" target="_blank" class="text-slate-500 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Private Local RAG</h3>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow leading-relaxed">
+                        Built a privacy-first RAG pipeline using Llama 3.2, LangChain, and ChromaDB for offline biomedical document querying. Reduced latency to under 2s.
                     </p>
-                    <div class="pt-4 border-t border-gray-700 mt-2">
-                        <p class="text-xs text-blue-400 font-semibold mb-4">Reduced retrieval time to under 2s</p>
-                        <a href="https://github.com/adityaglory/local-biomedical-rag" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition">
-                            View on GitHub
-                        </a>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-violet-400 bg-violet-400/10 px-2 py-1 rounded">Llama 3</span>
+                        <span class="text-xs font-medium text-violet-400 bg-violet-400/10 px-2 py-1 rounded">LangChain</span>
+                        <span class="text-xs font-medium text-violet-400 bg-violet-400/10 px-2 py-1 rounded">ChromaDB</span>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">GANs Data Augmentation</h3>
-                    <p class="text-sm mb-4 leading-relaxed flex-grow text-gray-400">
-                        Undergraduate thesis research addressing class imbalance by architecting custom GANs and VAEs to synthesize medical data.
+                <div class="bg-brandCard rounded-2xl p-6 border border-slate-700/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <a href="https://github.com/adityaglory" target="_blank" class="text-slate-500 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">GANs Data Augmentation</h3>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow leading-relaxed">
+                        Synthesized high-resolution medical data using custom GANs and VAEs to address dataset scarcity, boosting F1-Score to 96% and optimal FID score of 0.2249.
                     </p>
-                    <div class="pt-4 border-t border-gray-700 mt-2">
-                        <p class="text-xs text-blue-400 font-semibold mb-4">Boosted F1-Score to 96% | FID Score 0.2249</p>
-                        <a href="https://github.com/adityaglory/GAN-for-Imbalanced-Dataset" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition">
-                            View on GitHub
-                        </a>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">GANs</span>
+                        <span class="text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">VAEs</span>
+                        <span class="text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Medical Data</span>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">Emosense (MLOps)</h3>
-                    <p class="text-sm mb-4 leading-relaxed flex-grow text-gray-400">
+                <div class="bg-brandCard rounded-2xl p-6 border border-slate-700/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col group">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Meltion (Melanoma App)</h3>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow leading-relaxed">
+                        Preprocessed ±10000 skin lesion datasets and fine-tuned a ResNet50 model achieving 78% accuracy.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-orange-400 bg-orange-400/10 px-2 py-1 rounded">ResNet50</span>
+                        <span class="text-xs font-medium text-orange-400 bg-orange-400/10 px-2 py-1 rounded">Vertex AI</span>
+                    </div>
+                </div>
+
+                <div class="bg-brandCard rounded-2xl p-6 border border-slate-700/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col group">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Emosense (MLOps)</h3>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow leading-relaxed">
                         End-to-end emotion detection system using Quantized ONNX (INT8), Docker container, and Streamlit UI.
                     </p>
-                    <div class="pt-4 border-t border-gray-700 mt-2">
-                        <p class="text-xs text-blue-400 font-semibold mb-4">Lightweight & Production-Ready</p>
-                        <a href="https://github.com/adityaglory" target="_blank" class="inline-flex items-center justify-center w-full bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold py-2 px-4 rounded transition">
-                            View on GitHub
-                        </a>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-pink-400 bg-pink-400/10 px-2 py-1 rounded">ONNX</span>
+                        <span class="text-xs font-medium text-pink-400 bg-pink-400/10 px-2 py-1 rounded">Streamlit</span>
+                    </div>
+                </div>
+
+                 <div class="bg-brandCard rounded-2xl p-6 border border-slate-700/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col group">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Real-Time Handwashing CV</h3>
+                    <p class="text-sm text-slate-400 mb-6 flex-grow leading-relaxed">
+                        Developed a CV pipeline with MediaPipe and deployed an SVM model for on-device inference.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs font-medium text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">MediaPipe</span>
+                        <span class="text-xs font-medium text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">Raspberry Pi</span>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <section class="pb-12">
-            <h2 class="text-3xl font-bold section-title">Certifications</h2>
-            <div class="flex flex-col space-y-4">
-                <div class="bg-gray-800 p-5 rounded-lg border border-gray-700 flex justify-between items-center">
-                    <div>
-                        <h3 class="text-white font-bold">Azure AI Fundamentals (AI-900)</h3>
-                        <p class="text-sm text-gray-400">Microsoft</p>
-                    </div>
-                    <span class="text-sm text-blue-400 font-semibold">Sep 2025</span>
-                </div>
-                <div class="bg-gray-800 p-5 rounded-lg border border-gray-700 flex justify-between items-center">
-                    <div>
-                        <h3 class="text-white font-bold">DeepLearning.AI GANs Specialization</h3>
-                        <p class="text-sm text-gray-400">Coursera</p>
-                    </div>
-                    <span class="text-sm text-blue-400 font-semibold">Aug 2023</span>
-                </div>
-            </div>
-        </section>
+    </main>
 
-    </div>
+    <footer class="border-t border-slate-800 bg-brandDark py-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Glory Aditya Jauzaulbahi. Built with Tailwind CSS.</p>
+    </footer>
 
 </body>
 </html>
