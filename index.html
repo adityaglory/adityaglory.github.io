@@ -9,19 +9,15 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #0a0a0a; /* Hitam pekat minimalis */
-            color: #a3a3a3; /* Teks abu-abu untuk kenyamanan membaca */
+            background-color: #0a0a0a; 
+            color: #a3a3a3; 
         }
         h1, h2, h3 { 
-            color: #ededed; /* Judul putih cerah */
+            color: #ededed; 
             font-weight: 500; 
         }
-        a { 
-            transition: color 0.2s ease; 
-        }
-        a:hover { 
-            color: #ededed; 
-        }
+        a { transition: color 0.2s ease; }
+        a:hover { color: #ededed; }
     </style>
 </head>
 <body class="antialiased max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-16">
@@ -29,7 +25,7 @@
     <header class="space-y-6">
         <div>
             <h1 class="text-3xl font-semibold tracking-tight">Glory Aditya Jauzaulbahi</h1>
-            <p class="mt-1 text-neutral-400">AI/ML Engineer</p>
+            <p class="mt-1 text-neutral-400">AI/ML Engineer & Computer Vision Specialist</p>
         </div>
         
         <div class="flex flex-wrap gap-4 text-sm font-medium">
@@ -48,50 +44,26 @@
     <section class="space-y-6">
         <h2 class="text-xl tracking-tight">Technical Skills</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-            <div>
-                <span class="block text-neutral-300 font-medium mb-1">AI & ML Frameworks</span>
-                PyTorch, TensorFlow, Keras, Scikit-learn, LangChain
-            </div>
-            <div>
-                <span class="block text-neutral-300 font-medium mb-1">Computer Vision</span>
-                OpenCV, MediaPipe, Roboflow, YOLO
-            </div>
-            <div>
-                <span class="block text-neutral-300 font-medium mb-1">MLOps & Infrastructure</span>
-                Docker, MLflow, Streamlit, GitHub Actions
-            </div>
-            <div>
-                <span class="block text-neutral-300 font-medium mb-1">Languages, Tools & Cloud</span>
-                Python, SQL, Linux, Git, Microsoft Azure AI
-            </div>
+            <div><span class="block text-neutral-300 font-medium mb-1">AI & ML Frameworks</span>PyTorch, TensorFlow, Keras, Scikit-learn, LangChain</div>
+            <div><span class="block text-neutral-300 font-medium mb-1">Computer Vision</span>OpenCV, MediaPipe, Roboflow, YOLO</div>
+            <div><span class="block text-neutral-300 font-medium mb-1">MLOps & Infrastructure</span>Docker, MLflow, Streamlit, GitHub Actions</div>
+            <div><span class="block text-neutral-300 font-medium mb-1">Languages, Tools & Cloud</span>Python, SQL, Linux, Git, Microsoft Azure AI</div>
         </div>
     </section>
 
     <section class="space-y-6">
         <h2 class="text-xl tracking-tight">Experience & Education</h2>
-        
         <div class="space-y-6 text-sm">
             <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
-                <div>
-                    <h3 class="text-neutral-300 font-medium">AI Research Intern</h3>
-                    <p>Pusat Riset Sains Data & Informasi, Badan Riset & Inovasi Nasional</p>
-                </div>
+                <div><h3 class="text-neutral-300 font-medium">AI Research Intern</h3><p>Pusat Riset Sains Data & Informasi, BRIN</p></div>
                 <p class="text-neutral-500 shrink-0">Jul 2022 - Sep 2022</p>
             </div>
-            
             <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
-                <div>
-                    <h3 class="text-neutral-300 font-medium">B.Eng in Biomedical Engineering</h3>
-                    <p>Universitas Gadjah Mada</p>
-                </div>
+                <div><h3 class="text-neutral-300 font-medium">B.Eng in Biomedical Engineering</h3><p>Universitas Gadjah Mada</p></div>
                 <p class="text-neutral-500 shrink-0">Exp. Aug 2025</p>
             </div>
-
             <div class="flex flex-col sm:flex-row sm:justify-between gap-1">
-                <div>
-                    <h3 class="text-neutral-300 font-medium">AI/ML Engineering Bootcamp</h3>
-                    <p>Pacmann AI</p>
-                </div>
+                <div><h3 class="text-neutral-300 font-medium">AI/ML Engineering Bootcamp</h3><p>Pacmann AI</p></div>
                 <p class="text-neutral-500 shrink-0">Jan 2024 - Mar 2026</p>
             </div>
         </div>
@@ -100,71 +72,73 @@
     <section class="space-y-6">
         <h2 class="text-xl tracking-tight">Projects</h2>
         
-        <div class="space-y-8">
-            <div>
-                <div class="flex justify-between items-baseline mb-1">
-                    <h3 class="text-neutral-300 font-medium">Smart Nutritional OCR</h3>
-                    <a href="https://github.com/adityaglory" target="_blank" class="text-xs underline decoration-neutral-700 underline-offset-4">GitHub ↗</a>
-                </div>
-                <p class="text-sm leading-relaxed mb-2">Engineered a GPU-accelerated Computer Vision OCR pipeline using YOLO & EasyOCR with automated cross-imputation, containerized via Docker.</p>
-                <p class="text-xs text-neutral-500">Key Result: Automated Metadata Imputation & Scalable Batch Processing</p>
-            </div>
-
-            <div>
-                <div class="flex justify-between items-baseline mb-1">
-                    <h3 class="text-neutral-300 font-medium">Private Local RAG</h3>
-                    <a href="https://github.com/adityaglory" target="_blank" class="text-xs underline decoration-neutral-700 underline-offset-4">GitHub ↗</a>
-                </div>
-                <p class="text-sm leading-relaxed mb-2">Built a privacy-first RAG pipeline using Llama 3.2, LangChain, and ChromaDB for offline biomedical document querying.</p>
-                <p class="text-xs text-neutral-500">Key Result: Reduced retrieval time to under 2s</p>
-            </div>
-
-            <div>
-                <div class="flex justify-between items-baseline mb-1">
-                    <h3 class="text-neutral-300 font-medium">GANs for Imbalanced Dataset Augmentation</h3>
-                    <a href="https://github.com/adityaglory" target="_blank" class="text-xs underline decoration-neutral-700 underline-offset-4">GitHub ↗</a>
-                </div>
-                <p class="text-sm leading-relaxed mb-2">Conducted novel research addressing class imbalance in medical datasets by architecting custom GANs and VAEs to synthesize data.</p>
-                <p class="text-xs text-neutral-500">Key Result: Boosted F1-Score to 96% | FID Score 0.2249</p>
-            </div>
-
-            <div>
-                <div class="flex justify-between items-baseline mb-1">
-                    <h3 class="text-neutral-300 font-medium">Meltion (Melanoma Detection) Android App - Capstone Team Project</h3>
-                    <a href="https://github.com/adityaglory" target="_blank" class="text-xs underline decoration-neutral-700 underline-offset-4">GitHub ↗</a>
-                </div>
-                <p class="text-sm leading-relaxed mb-2">Preprocessed skin lesion datasets and fine-tuned a ResNet50 model. Collaborated with developers to integrate backend via Google Vertex AI.</p>
-                <p class="text-xs text-neutral-500">Key Result: 78% accuracy in multiclass detection</p>
-            </div>
-
-            <div>
-                <div class="flex justify-between items-baseline mb-1">
-                    <h3 class="text-neutral-300 font-medium">Emosense (MLOps)</h3>
-                    <a href="https://github.com/adityaglory" target="_blank" class="text-xs underline decoration-neutral-700 underline-offset-4">GitHub ↗</a>
-                </div>
-                <p class="text-sm leading-relaxed mb-2">End-to-end emotion detection system using Quantized ONNX (INT8), Docker container, and Streamlit UI.</p>
-                <p class="text-xs text-neutral-500">Key Result: Lightweight & Production-Ready</p>
-            </div>
-        </div>
+        <div id="projects-container" class="space-y-8"></div>
     </section>
 
     <section class="space-y-6 pb-12 border-b border-neutral-800">
         <h2 class="text-xl tracking-tight">Certifications</h2>
         <ul class="space-y-3 text-sm">
-            <li class="flex flex-col sm:flex-row sm:justify-between gap-1">
-                <span class="text-neutral-300">Azure AI Fundamentals (AI-900)</span>
-                <span class="text-neutral-500">Microsoft, Sep 2025</span>
-            </li>
-            <li class="flex flex-col sm:flex-row sm:justify-between gap-1">
-                <span class="text-neutral-300">DeepLearning.AI GANs Specialization</span>
-                <span class="text-neutral-500">Coursera, Aug 2023</span>
-            </li>
+            <li class="flex flex-col sm:flex-row sm:justify-between gap-1"><span class="text-neutral-300">Azure AI Fundamentals (AI-900)</span><span class="text-neutral-500">Microsoft, Sep 2025</span></li>
+            <li class="flex flex-col sm:flex-row sm:justify-between gap-1"><span class="text-neutral-300">DeepLearning.AI GANs Specialization</span><span class="text-neutral-500">Coursera, Aug 2023</span></li>
         </ul>
     </section>
 
     <footer class="pb-12 text-xs text-neutral-500">
         &copy; 2026 Glory Aditya Jauzaulbahi.
     </footer>
+
+    <script>
+        // 1. Kita buat variabel penyimpanan data proyek
+        // Kamu bisa mengganti isi 'repoLink' dengan link asli menuju spesifik repository GitHub kamu
+        const projectsData = [
+            {
+                title: "Smart Nutritional OCR",
+                repoLink: "https://github.com/adityaglory/smart-nutritional-ocr", // Ganti link aslinya di sini!
+                description: "Engineered a GPU-accelerated Computer Vision OCR pipeline using YOLO & EasyOCR with automated cross-imputation, containerized via Docker.",
+                keyResult: "Automated Metadata Imputation & Scalable Batch Processing"
+            },
+            {
+                title: "Private Local RAG",
+                repoLink: "https://github.com/adityaglory/private-local-rag", // Ganti link aslinya di sini!
+                description: "Built a privacy-first RAG pipeline using Llama 3.2, LangChain, and ChromaDB for offline biomedical document querying.",
+                keyResult: "Reduced retrieval time to under 2s"
+            },
+            {
+                title: "GANs for Dataset Augmentation",
+                repoLink: "https://github.com/adityaglory/gans-medical-augmentation", // Ganti link aslinya di sini!
+                description: "Conducted novel research addressing class imbalance in medical datasets by architecting custom GANs and VAEs to synthesize data.",
+                keyResult: "Boosted F1-Score to 96% | FID Score 0.2249"
+            },
+            {
+                title: "Meltion (Melanoma Detection App)",
+                repoLink: "https://github.com/adityaglory/meltion-app", // Ganti link aslinya di sini!
+                description: "Preprocessed skin lesion datasets and fine-tuned a ResNet50 model. Collaborated to integrate backend via Google Vertex AI.",
+                keyResult: "78% accuracy in multiclass detection"
+            },
+            {
+                title: "Emosense (MLOps)",
+                repoLink: "https://github.com/adityaglory/emosense", // Ganti link aslinya di sini!
+                description: "End-to-end emotion detection system using Quantized ONNX (INT8), Docker container, and Streamlit UI.",
+                keyResult: "Lightweight & Production-Ready"
+            }
+        ];
+
+        // 2. Kita cari elemen HTML penampungnya berdasarkan ID
+        const container = document.getElementById('projects-container');
+
+        // 3. Kita ubah Data (Array) menjadi elemen HTML menggunakan fungsi map()
+        // Lalu gunakan innerHTML untuk menyisipkannya ke dalam wadah HTML
+        container.innerHTML = projectsData.map(project => `
+            <div>
+                <div class="flex justify-between items-baseline mb-1">
+                    <h3 class="text-neutral-300 font-medium">${project.title}</h3>
+                    <a href="${project.repoLink}" target="_blank" class="text-xs underline decoration-neutral-700 underline-offset-4">GitHub ↗</a>
+                </div>
+                <p class="text-sm leading-relaxed mb-2">${project.description}</p>
+                <p class="text-xs text-neutral-500">Key Result: ${project.keyResult}</p>
+            </div>
+        `).join(''); // join('') digunakan untuk menggabungkan hasil perulangan tanpa ada tanda koma
+    </script>
 
 </body>
 </html>
