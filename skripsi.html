@@ -33,11 +33,6 @@
             border-radius: 0.5rem;
             border: 1px dashed #404040;
         }
-        .image-placeholder {
-            color: #6b7280;
-            font-size: 0.875rem;
-            font-style: italic;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -71,26 +66,26 @@
 
         <section>
             <h2>Abstract</h2>
-            <p>The availability of imbalanced datasets presents a significant challenge in the development of optimal intelligent systems, hindering the performance of classifier models particularly in recognizing minority classes[cite: 299]. This research explores the use of generative models, specifically Generative Adversarial Networks (GAN) and Variational Autoencoders (VAE), as data augmentation techniques[cite: 300]. Both models generated synthetic data to produce balanced datasets[cite: 301]. Evaluation across three classifier models (SVM, Random Forest, KNN) indicated that GAN outperforms VAE in generating high-quality synthetic data, evidenced by a superior Fréchet Inception Distance (FID) score of 0.2249[cite: 304]. Notably, the KNN model achieved a 91% accuracy and 90% F1-Score on the GAN-augmented dataset, a significant improvement from its 82% baseline[cite: 305].</p>
+            <p>The availability of imbalanced datasets presents a significant challenge in the development of optimal intelligent systems, hindering the performance of classifier models particularly in recognizing minority classes. This research explores the use of generative models, specifically Generative Adversarial Networks (GAN) and Variational Autoencoders (VAE), as data augmentation techniques. Both models generated synthetic data to produce balanced datasets. Evaluation across three classifier models (SVM, Random Forest, KNN) indicated that GAN outperforms VAE in generating high-quality synthetic data, evidenced by a superior Fréchet Inception Distance (FID) score of 0.2249. Notably, the KNN model achieved a 91% accuracy and 90% F1-Score on the GAN-augmented dataset, a significant improvement from its 82% baseline.</p>
         </section>
 
         <section>
             <h2>1. Introduction</h2>
-            <p>The application of Artificial Intelligence (AI) has become increasingly widespread, particularly in the medical domain where intelligent systems are integrated to provide faster and more accurate disease diagnoses[cite: 310, 311]. However, developing effective systems requires high-quality, sufficient data[cite: 312]. Data acquisition in real-world scenarios often faces severe obstacles, including modality limitations, rare disease sample scarcity, and strict ethical constraints regarding data privacy[cite: 314].</p>
-            <p>These constraints frequently result in imbalanced datasets, where the majority class significantly outweighs the minority class[cite: 316, 317]. Consequently, learning models become biased, leading to high overall accuracy but poor sensitivity for the crucial minority cases[cite: 318, 319]. To mitigate these issues, this study investigates the application of Generative Adversarial Networks (GAN) to synthetically augment minority class representations, ensuring a more robust and accurate diagnostic system[cite: 324, 328].</p>
+            <p>The application of Artificial Intelligence (AI) has become increasingly widespread, particularly in the medical domain where intelligent systems are integrated to provide faster and more accurate disease diagnoses. However, developing effective systems requires high-quality, sufficient data. Data acquisition in real-world scenarios often faces severe obstacles, including modality limitations, rare disease sample scarcity, and strict ethical constraints regarding data privacy.</p>
+            <p>These constraints frequently result in imbalanced datasets, where the majority class significantly outweighs the minority class. Consequently, learning models become biased, leading to high overall accuracy but poor sensitivity for the crucial minority cases. To mitigate these issues, this study investigates the application of Generative Adversarial Networks (GAN) to synthetically augment minority class representations, ensuring a more robust and accurate diagnostic system.</p>
         </section>
 
         <section>
             <h2>2. Methodology</h2>
             <h3>2.1. Dataset and Preprocessing</h3>
-            <p>The dataset utilized in this research comprises 251 ultrasound audio files sourced from previous academic literature[cite: 468]. It exhibits a distinct class imbalance containing 114 instances of arterial data (minority class) and 137 non-arterial instances (majority class)[cite: 443, 445].</p>
+            <p>The dataset utilized in this research comprises 251 ultrasound audio files sourced from previous academic literature. It exhibits a distinct class imbalance containing 114 instances of arterial data (minority class) and 137 non-arterial instances (majority class).</p>
             
             <div class="image-container">
                 <img src="images/gan flowchart.png" alt="Flowchart of Proposed Method" class="w-full h-auto rounded-lg shadow-md">
                 <p class="text-sm mt-2 text-gray-400 italic">Figure 1. Flowchart of Proposed Method</p>
             </div>
 
-            <p>To extract important features from the audio data, Short Time Fourier Transform (STFT) was applied to convert the 1D signal data into 2D spectrogram images[cite: 484]. These spectrograms were then resized to 128x128 pixels, converted to grayscale, and normalized to a [-1, 1] range to prepare them for neural network training[cite: 506].</p>
+            <p>To extract important features from the audio data, Short Time Fourier Transform (STFT) was applied to convert the 1D signal data into 2D spectrogram images. These spectrograms were then resized to 128x128 pixels, converted to grayscale, and normalized to a [-1, 1] range to prepare them for neural network training.</p>
 
             <div class="image-container mt-6">
                 <img src="images/data-asli.jpg" alt="Spectrogram Visualization of Arterial Data" class="w-full h-auto rounded-lg shadow-md">
@@ -98,7 +93,7 @@
             </div>
 
             <h3>2.2. Generative Model Architectures</h3>
-            <p>Two advanced generative architectures were trained to synthesize the minority class: Deep Convolutional GAN (DCGAN) and VAE[cite: 519]. The DCGAN architecture relies on a generator that upsamples random noise vectors through transpose convolutional layers, while a discriminator network competes to distinguish real from fake data[cite: 522, 524]. Conversely, the VAE maps input data into a lower-dimensional probabilistic latent space and reconstructs it[cite: 534, 535]. Both models were tasked with generating 23 synthetic arterial samples to equalize the class distribution[cite: 567].</p>
+            <p>Two advanced generative architectures were trained to synthesize the minority class: Deep Convolutional GAN (DCGAN) and VAE. The DCGAN architecture relies on a generator that upsamples random noise vectors through transpose convolutional layers, while a discriminator network competes to distinguish real from fake data. Conversely, the VAE maps input data into a lower-dimensional probabilistic latent space and reconstructs it. Both models were tasked with generating 23 synthetic arterial samples to equalize the class distribution.</p>
 
             <div class="image-container mt-6">
                 <img src="images/GAN-LOSS.jpg" alt="Generator and Discriminator Losses During Training" class="w-full h-auto rounded-lg shadow-md">
@@ -106,13 +101,13 @@
             </div>
 
             <h3>2.3. Classification Strategy</h3>
-            <p>Following augmentation, the datasets were split into an 80:20 training and testing ratio[cite: 580]. Three distinct machine learning algorithms were deployed: Support Vector Machine (SVM), Random Forest, and K-Nearest Neighbors (KNN)[cite: 583]. Extensive hyperparameter tuning was conducted via Grid Search cross-validation to identify the optimal configuration for each classifier[cite: 589].</p>
+            <p>Following augmentation, the datasets were split into an 80:20 training and testing ratio. Three distinct machine learning algorithms were deployed: Support Vector Machine (SVM), Random Forest, and K-Nearest Neighbors (KNN). Extensive hyperparameter tuning was conducted via Grid Search cross-validation to identify the optimal configuration for each classifier.</p>
         </section>
 
         <section>
             <h2>3. Results and Discussion</h2>
             <h3>3.1. Generative Model Performance</h3>
-            <p>The quality of the synthetically generated data was quantified using several metrics, primarily Structural Similarity Index Measure (SSIM) and Fréchet Inception Distance (FID)[cite: 408]. As shown in Table 1, while both models demonstrated similar structural preservation (SSIM), the GAN achieved a significantly lower FID score (0.2249) compared to the VAE (0.86)[cite: 631, 633]. A lower FID score mathematically indicates that the distribution of the synthetic data generated by the GAN is substantially closer to the real-world ground truth data[cite: 634].</p>
+            <p>The quality of the synthetically generated data was quantified using several metrics, primarily Structural Similarity Index Measure (SSIM) and Fréchet Inception Distance (FID). As shown in Table 1, while both models demonstrated similar structural preservation (SSIM), the GAN achieved a significantly lower FID score (0.2249) compared to the VAE (0.86). A lower FID score mathematically indicates that the distribution of the synthetic data generated by the GAN is substantially closer to the real-world ground truth data.</p>
 
             <table>
                 <caption>Table 1. Generative Models Evaluation Metrics</caption>
@@ -126,18 +121,18 @@
                 <tbody>
                     <tr>
                         <td>SSIM</td>
-                        <td>0.5655 [cite: 630]</td>
-                        <td>0.5600 [cite: 630]</td>
+                        <td>0.5655</td>
+                        <td>0.5600</td>
                     </tr>
                     <tr>
                         <td>FID</td>
-                        <td>0.2249 [cite: 630]</td>
-                        <td>0.8600 [cite: 630]</td>
+                        <td>0.2249</td>
+                        <td>0.8600</td>
                     </tr>
                     <tr>
                         <td>Inception Score</td>
-                        <td>1.4220 ± 0.1626 [cite: 630]</td>
-                        <td>1.3400 ± 0.2200 [cite: 630]</td>
+                        <td>1.4220 ± 0.1626</td>
+                        <td>1.3400 ± 0.2200</td>
                     </tr>
                 </tbody>
             </table>
@@ -145,21 +140,21 @@
             <h4 class="text-lg font-medium text-gray-200 mt-8 mb-4 text-center">Visual Comparison: Original vs. Synthetic Data</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="image-container mt-0">
-                <img src="images/data-asli.jpg" alt="Original Arterial Spectrogram" class="w-full h-auto rounded-lg shadow-md">
-                <p class="text-sm mt-2 text-gray-400 italic">Figure 4. Original Arterial Spectrogram</p>
+                    <img src="images/data-asli.jpg" alt="Original Arterial Spectrogram" class="w-full h-auto rounded-lg shadow-md">
+                    <p class="text-sm mt-2 text-gray-400 italic">Figure 4. Original Arterial Spectrogram</p>
+                </div>
+                <div class="image-container mt-0">
+                    <img src="images/gan-1.jpg" alt="GAN Generated Data" class="w-full h-auto rounded-lg shadow-md">
+                    <p class="text-sm mt-2 text-gray-400 italic">Figure 5. GAN Generated Data</p>
+                </div>
+                <div class="image-container mt-0">
+                    <img src="images/vae 1.jpg" alt="VAE Generated Data" class="w-full h-auto rounded-lg shadow-md">
+                    <p class="text-sm mt-2 text-gray-400 italic">Figure 6. VAE Generated Data</p>
+                </div>
             </div>
-            <div class="image-container mt-0">
-                <img src="images/gan-1.jpg" alt="GAN Generated Data" class="w-full h-auto rounded-lg shadow-md">
-                <p class="text-sm mt-2 text-gray-400 italic">Figure 5. GAN Generated Data</p>
-            </div>
-            <div class="image-container mt-0">
-                <img src="images/vae 1.jpg" alt="VAE Generated Data" class="w-full h-auto rounded-lg shadow-md">
-                <p class="text-sm mt-2 text-gray-400 italic">Figure 6. VAE Generated Data</p>
-            </div>
-        </div>
 
             <h3>3.2. Classifier Enhancements Across Datasets</h3>
-            <p>To evaluate the impact of data augmentation, the classification results of Support Vector Machine (SVM), Random Forest (RF), and K-Nearest Neighbors (KNN) were compared across three different datasets: the original imbalanced dataset, the GAN-augmented dataset, and the VAE-augmented dataset[cite: 652]. The performance changes are distinctly observable in their accuracy and minority class (arterial) metrics.</p>
+            <p>To evaluate the impact of data augmentation, the classification results of Support Vector Machine (SVM), Random Forest (RF), and K-Nearest Neighbors (KNN) were compared across three different datasets: the original imbalanced dataset, the GAN-augmented dataset, and the VAE-augmented dataset. The performance changes are distinctly observable in their accuracy and minority class (arterial) metrics.</p>
 
             <table>
                 <caption>Table 2. Classifier Performance Comparison Across Datasets</caption>
@@ -176,55 +171,55 @@
                     <tr>
                         <td rowspan="2"><strong>SVM</strong></td>
                         <td>Accuracy</td>
-                        <td>96.7% [cite: 656]</td>
-                        <td>96.7% [cite: 659]</td>
-                        <td>91.0% [cite: 662]</td>
+                        <td>96.7%</td>
+                        <td>96.7%</td>
+                        <td>91.0%</td>
                     </tr>
                     <tr>
                         <td>Arterial F1-Score</td>
-                        <td>95.0% [cite: 656]</td>
-                        <td>96.7% [cite: 659]</td>
-                        <td>89.0% [cite: 662]</td>
+                        <td>95.0%</td>
+                        <td>96.7%</td>
+                        <td>89.0%</td>
                     </tr>
                     <tr>
                         <td rowspan="2"><strong>Random Forest</strong></td>
                         <td>Accuracy</td>
-                        <td>98.0% [cite: 656]</td>
-                        <td>95.0% [cite: 659]</td>
-                        <td>87.0% [cite: 662]</td>
+                        <td>98.0%</td>
+                        <td>95.0%</td>
+                        <td>87.0%</td>
                     </tr>
                     <tr>
                         <td>Arterial F1-Score</td>
-                        <td>97.0% [cite: 656]</td>
-                        <td>95.0% [cite: 659]</td>
-                        <td>87.0% [cite: 662]</td>
+                        <td>97.0%</td>
+                        <td>95.0%</td>
+                        <td>87.0%</td>
                     </tr>
                     <tr>
                         <td rowspan="2"><strong>KNN</strong></td>
                         <td>Accuracy</td>
-                        <td>82.0% [cite: 656]</td>
-                        <td>91.0% [cite: 659]</td>
-                        <td>82.0% [cite: 662]</td>
+                        <td>82.0%</td>
+                        <td>91.0%</td>
+                        <td>82.0%</td>
                     </tr>
                     <tr>
                         <td>Arterial F1-Score</td>
-                        <td>81.0% [cite: 656]</td>
-                        <td>90.0% [cite: 659]</td>
-                        <td>80.0% [cite: 662]</td>
+                        <td>81.0%</td>
+                        <td>90.0%</td>
+                        <td>80.0%</td>
                     </tr>
                 </tbody>
             </table>
 
-            <p>On the original imbalanced dataset, Random Forest achieved the highest accuracy at 98.0%. This superior performance can be attributed to its ensemble learning approach, which is highly effective in handling data imbalances[cite: 665]. Meanwhile, the KNN model struggled significantly, achieving an overall accuracy of just 82.0% and an 81.0% F1-Score for the minority class[cite: 656, 664].</p>
+            <p>On the original imbalanced dataset, Random Forest achieved the highest accuracy at 98.0%. This superior performance can be attributed to its ensemble learning approach, which is highly effective in handling data imbalances. Meanwhile, the KNN model struggled significantly, achieving an overall accuracy of just 82.0% and an 81.0% F1-Score for the minority class.</p>
 
-            <p>However, when trained on the GAN-augmented dataset, KNN experienced a remarkable performance surge, reaching 91.0% accuracy and a 90.0% F1-Score for arterial data[cite: 659, 670]. This improvement can be attributed to the synthetic data generated by GAN, which provides a feature space that is closer to the original data, allowing KNN to find more relevant neighbors[cite: 671]. SVM remained highly stable with a consistent 96.7% accuracy across the original and GAN-augmented datasets[cite: 669, 679].</p>
+            <p>However, when trained on the GAN-augmented dataset, KNN experienced a remarkable performance surge, reaching 91.0% accuracy and a 90.0% F1-Score for arterial data. This improvement can be attributed to the synthetic data generated by GAN, which provides a feature space that is closer to the original data, allowing KNN to find more relevant neighbors. SVM remained highly stable with a consistent 96.7% accuracy across the original and GAN-augmented datasets.</p>
 
-            <p>Interestingly, the VAE-augmented dataset caused a significant performance drop across all three models[cite: 673]. SVM's accuracy dropped to 91.0%, Random Forest to 87.0%, and KNN back to 82.0%[cite: 674]. This decline highlights that VAE tends to produce smoother, less diverse samples that fail to capture the critical variability of the original data distribution[cite: 676]. Overall, the findings clearly indicate that GAN-generated data provides better performance improvements across all three classifiers compared to VAE-generated data[cite: 677].</p>
+            <p>Interestingly, the VAE-augmented dataset caused a significant performance drop across all three models. SVM's accuracy dropped to 91.0%, Random Forest to 87.0%, and KNN back to 82.0%. This decline highlights that VAE tends to produce smoother, less diverse samples that fail to capture the critical variability of the original data distribution. Overall, the findings clearly indicate that GAN-generated data provides better performance improvements across all three classifiers compared to VAE-generated data.</p>
         </section>
 
         <section>
             <h2>4. Conclusion</h2>
-            <p>This study demonstrates the critical efficacy of Generative Adversarial Networks for addressing class imbalance within medical datasets[cite: 688]. Through empirical evaluation, GAN-generated synthetic data consistently outperformed VAE-generated data across structural metrics and downstream classification tasks[cite: 689]. The findings emphasize that utilizing advanced generative techniques is a highly viable methodology to build equitable, robust, and highly accurate intelligent diagnostic systems[cite: 692].</p>
+            <p>This study demonstrates the critical efficacy of Generative Adversarial Networks for addressing class imbalance within medical datasets. Through empirical evaluation, GAN-generated synthetic data consistently outperformed VAE-generated data across structural metrics and downstream classification tasks. The findings emphasize that utilizing advanced generative techniques is a highly viable methodology to build equitable, robust, and highly accurate intelligent diagnostic systems.</p>
         </section>
 
         <section class="references">
