@@ -85,23 +85,23 @@
             <p>The dataset utilized in this research comprises 251 ultrasound audio files sourced from previous academic literature [23]. It exhibits a distinct class imbalance containing 114 instances of arterial data (minority class) and 137 non-arterial instances (majority class).</p>
             
             <div class="image-container">
-                <p class="image-placeholder">[Insert Image: Fig_1_Flowchart.png]</p>
-                <p class="text-sm mt-2 text-gray-400">Figure 1. Flowchart of Proposed Method</p>
+                <img src="images/gan-flowchart.png" alt="Flowchart of Proposed Method" class="w-full h-auto rounded-lg shadow-md">
+                <p class="text-sm mt-2 text-gray-400 italic">Figure 1. Flowchart of Proposed Method</p>
             </div>
 
             <p>To extract important features from the audio data, Short Time Fourier Transform (STFT) was applied to convert the 1D signal data into 2D spectrogram images. These spectrograms were then resized to 128x128 pixels, converted to grayscale, and normalized to a [-1, 1] range to prepare them for neural network training.</p>
 
-            <div class="image-container">
-                <p class="image-placeholder">[Insert Image: Fig_8_Spectrogram_Arterial.png]</p>
-                <p class="text-sm mt-2 text-gray-400">Figure 2. Spectrogram Visualization of Arterial Data</p>
+            <div class="image-container mt-6">
+                <img src="images/arteri-spektrogram.jpg" alt="Spectrogram Visualization of Arterial Data" class="w-full h-auto rounded-lg shadow-md">
+                <p class="text-sm mt-2 text-gray-400 italic">Figure 2. Spectrogram Visualization of Arterial Data</p>
             </div>
 
             <h3>2.2. Generative Model Architectures</h3>
             <p>Two advanced generative architectures were trained to synthesize the minority class: Deep Convolutional GAN (DCGAN) and VAE. The DCGAN architecture relies on a generator that upsamples random noise vectors through transpose convolutional layers, while a discriminator network competes to distinguish real from fake data [10], [13]. Conversely, the VAE maps input data into a lower-dimensional probabilistic latent space and reconstructs it [16]. Both models were tasked with generating 23 synthetic arterial samples to equalize the class distribution.</p>
 
-            <div class="image-container">
-                <p class="image-placeholder">[Insert Image: Fig_13_Generator_Discriminator_Loss.png]</p>
-                <p class="text-sm mt-2 text-gray-400">Figure 3. Generator and Discriminator Losses During Training</p>
+            <div class="image-container mt-6">
+                <img src="images/GAN-LOSS.jpg" alt="Generator and Discriminator Losses During Training" class="w-full h-auto rounded-lg shadow-md">
+                <p class="text-sm mt-2 text-gray-400 italic">Figure 3. Generator and Discriminator Losses During Training</p>
             </div>
 
             <h3>2.3. Classification Strategy</h3>
@@ -141,10 +141,21 @@
                 </tbody>
             </table>
 
-            <div class="image-container">
-                <p class="image-placeholder">[Insert Image: Fig_16_GAN_Generated_Data.png]</p>
-                <p class="text-sm mt-2 text-gray-400">Figure 4. Sample of GAN Generated Data</p>
+            <h4 class="text-lg font-medium text-gray-200 mt-8 mb-4 text-center">Visual Comparison: Original vs. Synthetic Data</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="image-container mt-0">
+                <img src="images/data-asli.jpg" alt="Original Arterial Spectrogram" class="w-full h-auto rounded-lg shadow-md">
+                <p class="text-sm mt-2 text-gray-400 italic">Figure 4. Original Arterial Spectrogram</p>
             </div>
+            <div class="image-container mt-0">
+                <img src="images/gan-1.jpg" alt="GAN Generated Data" class="w-full h-auto rounded-lg shadow-md">
+                <p class="text-sm mt-2 text-gray-400 italic">Figure 5. GAN Generated Data</p>
+            </div>
+            <div class="image-container mt-0">
+                <img src="images/vae 1.jpg" alt="VAE Generated Data" class="w-full h-auto rounded-lg shadow-md">
+                <p class="text-sm mt-2 text-gray-400 italic">Figure 6. VAE Generated Data</p>
+            </div>
+        </div>
 
             <h3>3.2. Classifier Enhancements</h3>
             <p>The implementation of synthetic data yielded distinct impacts on the classification models. On the original imbalanced dataset, the KNN model struggled, achieving an overall accuracy of just 82% and a precision of 70% for the minority class. However, when trained on the GAN-augmented dataset, KNN experienced a remarkable performance surge, reaching 91% accuracy and a 90% F1-Score for arterial data.</p>
