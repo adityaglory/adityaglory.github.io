@@ -65,13 +65,13 @@
 
     <article>
         <header class="mb-12 text-center">
-            <h1 class="text-gray-100">RNN and Transformer Models for Financial Sentiment Analysis Under Hardware Constraints</h1>
-            <p class="text-sm text-gray-500 mt-4">By Glory Aditya Jauzaulbahi</p>
+            <h1 class="text-gray-100">RNN and Transformer Models for Financial Sentiment Analysis</h1>
+            <p class="text-sm text-gray-500 mt-4">Glory Aditya Jauzaulbahi</p>
         </header>
 
         <section>
             <h2>Abstract</h2>
-            <p>Financial news sentiment analysis is a critical component in algorithmic trading, yet datasets often suffer from extreme class imbalance and domain-specific lexical noise. Furthermore, fine-tuning state-of-the-art Natural Language Processing (NLP) models on consumer-grade hardware poses significant memory constraints. This study presents an end-to-end pipeline to address these challenges using the Financial PhraseBank dataset by applying Random Oversampling and custom stopword filtering. We benchmarked three distinct architectures—a highly tuned classical BiLSTM, a lightweight MobileBERT, and a complex DeBERTa-v3—on a strictly limited local device (8GB VRAM). The empirical results demonstrate that Google's MobileBERT outperformed the others with a Macro F1-Score of 0.99 and flawless real-world inference. This study proves that utilizing lightweight transformers yields superior performance in edge-computing environments compared to the indiscriminate adoption of massive architectures.</p>
+            <p>Financial news sentiment analysis is a critical component in algorithmic trading, yet datasets often suffer from extreme class imbalance and domain-specific lexical noise. Furthermore, fine-tuning state-of-the-art Natural Language Processing (NLP) models on consumer-grade hardware poses significant memory constraints. This study presents an end-to-end pipeline to address these challenges using the Financial PhraseBank dataset by applying Random Oversampling and custom stopword filtering. We benchmarked three distinct architectures: a highly tuned classical BiLSTM, a lightweight MobileBERT, and a complex DeBERTa-v3 on a strictly limited local device (8GB VRAM). The empirical results demonstrate that Google's MobileBERT outperformed the others with a Macro F1-Score of 0.99 and flawless real-world inference. This study proves that utilizing lightweight transformers yields superior performance in edge-computing environments compared to the indiscriminate adoption of massive architectures.</p>
         </section>
 
         <section>
@@ -86,17 +86,16 @@
             <p>The primary data source for this study is the Financial PhraseBank dataset [1], categorized into Negative, Neutral, and Positive sentiments. Initial exploratory data analysis revealed a severe class imbalance, heavily dominated by the "Neutral" class (1,391 samples) while the "Negative" class was severely underrepresented (303 samples).</p>
             
             <div class="image-container">
-                <p class="image-placeholder">[Insert Image: Fig_1_Distribution.png]</p>
+                <p class="image-placeholder"> </p>
                 <p class="text-sm mt-2 text-gray-400">Figure 1. Initial sentiment classification distribution showing severe class imbalance.</p>
             </div>
 
             <p>To mitigate the risk of mode collapse, Random Oversampling was applied to the minority classes, duplicating random instances until they matched the Neutral class volume (1,391 samples each). Lexical extraction was also performed to filter out domain-specific stopwords (e.g., profit, million, euro). To optimize memory overhead, the sequence maximum length threshold was strictly set to 128 tokens, which was sufficient to encapsulate over 99% of the sentence contexts.</p>
-
         </section>
 
         <section>
             <h2>3. Model Architectures & Experimental Setup</h2>
-            <p>All experiments were strictly executed locally on a consumer-grade NVIDIA RTX 3070 GPU (8GB VRAM limit). To prevent Out-Of-Memory (OOM) fragmentation, aggressive memory management—including explicit garbage collection and manual CUDA cache clearing—was enforced. The three evaluated models were:</p>
+            <p>All experiments were strictly executed locally on a consumer-grade NVIDIA RTX 3070 GPU (8GB VRAM limit). To prevent Out-Of-Memory (OOM) fragmentation, aggressive memory management, including explicit garbage collection and manual CUDA cache clearing, was enforced. The three evaluated models were:</p>
             <ul>
                 <li class="mb-2"><strong class="text-gray-200">BiLSTM:</strong> Serving as the classical sequential baseline, augmented with frozen pre-trained BERT embeddings, Batch Normalization, and optimized via RMSprop with a ReduceLROnPlateau scheduler [6].</li>
                 <li class="mb-2"><strong class="text-gray-200">MobileBERT:</strong> A thin, memory-efficient version of BERT_LARGE optimized for edge devices [7]. Fine-tuned using a standard learning rate of 2e-5 and Early Stopping.</li>
@@ -185,14 +184,18 @@
                 </tbody>
             </table>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="image-container mt-0">
+                    <p class="image-placeholder"></p>
+                    <p class="text-sm mt-2 text-gray-400">Figure 2. BiLSTM Confusion Matrix</p>
+                </div>
                 <div class="image-container mt-0">
                     <p class="image-placeholder">[Insert Image: Fig_6_MobileBERT_CM.png]</p>
-                    <p class="text-sm mt-2 text-gray-400">Figure 2. MobileBERT Confusion Matrix</p>
+                    <p class="text-sm mt-2 text-gray-400">Figure 3. MobileBERT Confusion Matrix</p>
                 </div>
                 <div class="image-container mt-0">
                     <p class="image-placeholder">[Insert Image: Fig_8_DeBERTa_CM.png]</p>
-                    <p class="text-sm mt-2 text-gray-400">Figure 3. DeBERTa-v3 Confusion Matrix (Mode Collapse)</p>
+                    <p class="text-sm mt-2 text-gray-400">Figure 4. DeBERTa-v3 Confusion Matrix (Mode Collapse)</p>
                 </div>
             </div>
 
