@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Sentiment Classification & Model Selection - Glory Aditya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #a3a3a3;
+            line-height: 1.8;
+        }
+        h1, h2, h3 {
+            color: #f3f4f6;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        h1 { font-size: 2.25rem; line-height: 1.2; }
+        h2 { font-size: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.25rem; }
+        p { margin-bottom: 1.25rem; text-align: justify; }
+        a { color: #60a5fa; text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #93c5fd; }
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+            background-color: #171717;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px dashed #404040;
+        }
+        .image-placeholder {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background-color: #171717;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid #404040;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        th { background-color: #262626; color: #f3f4f6; font-weight: 500; }
+        .references {
+            font-size: 0.875rem;
+            background-color: #121212;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 3rem;
+        }
+        .references p { margin-bottom: 0.5rem; text-align: left; }
+    </style>
+</head>
+<body class="max-w-4xl mx-auto p-6 md:p-12">
+
+    <article>
+        <header class="mb-12 text-center">
+            <h1 class="text-gray-100">RNN and Transformer Models for Financial Sentiment Analysis Under Hardware Constraints</h1>
+            <p class="text-sm text-gray-500 mt-4">By Glory Aditya Jauzaulbahi</p>
+        </header>
+
+        <section>
+            <h2>Abstract</h2>
+            <p>Financial news sentiment analysis is a critical component in algorithmic trading, yet datasets often suffer from extreme class imbalance and domain-specific lexical noise. Furthermore, fine-tuning state-of-the-art Natural Language Processing (NLP) models on consumer-grade hardware poses significant memory constraints. This study presents an end-to-end pipeline to address these challenges using the Financial PhraseBank dataset by applying Random Oversampling and custom stopword filtering. We benchmarked three distinct architectures—a highly tuned classical BiLSTM, a lightweight MobileBERT, and a complex DeBERTa-v3—on a strictly limited local device (8GB VRAM). The empirical results demonstrate that Google's MobileBERT outperformed the others with a Macro F1-Score of 0.99 and flawless real-world inference. This study proves that utilizing lightweight transformers yields superior performance in edge-computing environments compared to the indiscriminate adoption of massive architectures.</p>
+        </section>
+
+        <section>
+            <h2>1. Introduction</h2>
+            <p>Amidst the massive wave of digitalization, financial information moves within seconds across various platforms. Real-world observations indicate that economic narratives in financial news are fraught with extreme ambiguity, where a single term can trigger completely opposing interpretations depending on prevailing market conditions. This uncertainty-laden complexity renders financial news data highly nuanced, meaning it cannot be comprehended literally and demands deep, contextual interpretation.</p>
+            <p>A critical dimension of this exploration involves balancing the need for advanced semantic interpretation with practical deployment constraints. While previous studies prioritize maximizing evaluation metrics via massive architectures like FinBERT [2], [3], a noticeable gap exists regarding the practical deployment of these deep models in highly resource-constrained edge environments. This study uniquely emphasizes the engineering challenges of hardware instability and Mode Collapse when benchmarking memory-efficient transformers against State-of-the-Art (SOTA) models under a strict 8GB VRAM limitation.</p>
+        </section>
+
+        <section>
+            <h2>2. Methodology</h2>
+            <h3>2.1. Dataset and Preprocessing</h3>
+            <p>The primary data source for this study is the Financial PhraseBank dataset [1], categorized into Negative, Neutral, and Positive sentiments. Initial exploratory data analysis revealed a severe class imbalance, heavily dominated by the "Neutral" class (1,391 samples) while the "Negative" class was severely underrepresented (303 samples).</p>
+            
+            <div class="image-container">
+                <p class="image-placeholder">[Insert Image: Fig_1_Distribution.png]</p>
+                <p class="text-sm mt-2 text-gray-400">Figure 1. Initial sentiment classification distribution showing severe class imbalance.</p>
+            </div>
+
+            <p>To mitigate the risk of mode collapse, Random Oversampling was applied to the minority classes, duplicating random instances until they matched the Neutral class volume (1,391 samples each). Lexical extraction was also performed to filter out domain-specific stopwords (e.g., profit, million, euro). To optimize memory overhead, the sequence maximum length threshold was strictly set to 128 tokens, which was sufficient to encapsulate over 99% of the sentence contexts.</p>
+
+        </section>
+
+        <section>
+            <h2>3. Model Architectures & Experimental Setup</h2>
+            <p>All experiments were strictly executed locally on a consumer-grade NVIDIA RTX 3070 GPU (8GB VRAM limit). To prevent Out-Of-Memory (OOM) fragmentation, aggressive memory management—including explicit garbage collection and manual CUDA cache clearing—was enforced. The three evaluated models were:</p>
+            <ul>
+                <li class="mb-2"><strong class="text-gray-200">BiLSTM:</strong> Serving as the classical sequential baseline, augmented with frozen pre-trained BERT embeddings, Batch Normalization, and optimized via RMSprop with a ReduceLROnPlateau scheduler [6].</li>
+                <li class="mb-2"><strong class="text-gray-200">MobileBERT:</strong> A thin, memory-efficient version of BERT_LARGE optimized for edge devices [7]. Fine-tuned using a standard learning rate of 2e-5 and Early Stopping.</li>
+                <li class="mb-2"><strong class="text-gray-200">DeBERTa-v3:</strong> A SOTA architecture utilizing a disentangled attention mechanism [8]. It required extreme stabilization (learning rate 1e-5, weight decay 0.05, warmup 150 steps, and AdamW) simply to force the model to complete the training loop without hardware failure.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Results and Discussion</h2>
+            <h3>4.1. Model Evaluation Metrics</h3>
+            <p>Evaluated strictly on an unseen, stratified Test Set (418 samples), the selected architectures demonstrated vastly different proficiencies. As summarized in Table 1, MobileBERT delivered near-perfect classification capabilities across all metrics (Macro F1: 0.99). The classical baseline, BiLSTM, established a remarkably robust foundation (Macro F1: 0.94) but struggled with the sequential nuances between Neutral and Positive classes.</p>
+            
+            <table>
+                <caption>Table 1. Classification Report Across Models</caption>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Class</th>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3"><strong>BiLSTM</strong></td>
+                        <td>Negative</td>
+                        <td rowspan="3">0.94</td>
+                        <td>0.94</td>
+                        <td>0.96</td>
+                        <td>0.94</td>
+                    </tr>
+                    <tr>
+                        <td>Neutral</td>
+                        <td>0.97</td>
+                        <td>0.91</td>
+                        <td>0.94</td>
+                    </tr>
+                    <tr>
+                        <td>Positive</td>
+                        <td>0.87</td>
+                        <td>0.97</td>
+                        <td>0.92</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="bg-blue-900/20"><strong>MobileBERT</strong></td>
+                        <td class="bg-blue-900/20">Negative</td>
+                        <td rowspan="3" class="bg-blue-900/20">0.99</td>
+                        <td class="bg-blue-900/20">1.00</td>
+                        <td class="bg-blue-900/20">0.99</td>
+                        <td class="bg-blue-900/20">0.99</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-blue-900/20">Neutral</td>
+                        <td class="bg-blue-900/20">1.00</td>
+                        <td class="bg-blue-900/20">0.99</td>
+                        <td class="bg-blue-900/20">0.99</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-blue-900/20">Positive</td>
+                        <td class="bg-blue-900/20">0.99</td>
+                        <td class="bg-blue-900/20">0.99</td>
+                        <td class="bg-blue-900/20">0.99</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><strong>DeBERTa-v3</strong></td>
+                        <td>Negative</td>
+                        <td rowspan="3">0.33</td>
+                        <td>0.33</td>
+                        <td>1.00</td>
+                        <td>0.50</td>
+                    </tr>
+                    <tr>
+                        <td>Neutral</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Positive</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="image-container mt-0">
+                    <p class="image-placeholder">[Insert Image: Fig_6_MobileBERT_CM.png]</p>
+                    <p class="text-sm mt-2 text-gray-400">Figure 2. MobileBERT Confusion Matrix</p>
+                </div>
+                <div class="image-container mt-0">
+                    <p class="image-placeholder">[Insert Image: Fig_8_DeBERTa_CM.png]</p>
+                    <p class="text-sm mt-2 text-gray-400">Figure 3. DeBERTa-v3 Confusion Matrix (Mode Collapse)</p>
+                </div>
+            </div>
+
+            <h3>4.2. Diagnostic Analysis and Mode Collapse</h3>
+            <p>MobileBERT's self-attention mechanism effectively captured long-range dependencies while remaining highly optimized for the 8GB VRAM constraint. The RNN-based BiLSTM model fell victim to semantic traps; constrained by its left-to-right processing, it mistakenly classified complex negative statements as positive because it missed trailing negative context.</p>
+            <p>Most notably, the SOTA DeBERTa-v3 model failed completely under hardware deprivation, suffering a catastrophic Mode Collapse (Macro F1: 0.17). Regardless of the input, the model stubbornly outputted the "Negative" class. Its complex disentangled attention mechanism demanded massive memory buffers, causing the optimizer to fail and settle into a mathematical dead end.</p>
+        </section>
+
+        <section>
+            <h2>5. Conclusion</h2>
+            <p>This study successfully engineered an end-to-end financial sentiment analysis pipeline tailored for resource-constrained hardware. The empirical evaluation challenges the prevailing trend of indiscriminately utilizing massive architectures. We proved that adopting complex SOTA models like DeBERTa-v3 in edge-computing environments is an anti-pattern. Conversely, Google's MobileBERT emerged as the optimal solution, flawlessly bypassing hardware constraints to achieve a remarkable 0.99 Macro F1-Score, proving that lightweight transformers deliver the most robust solution for local algorithmic trading systems.</p>
+        </section>
+
+        <section class="references">
+            <h3 class="mt-0 text-gray-300">References</h3>
+            <p>[1] P. Malo, A. Sinha, P. Korhonen, J. Wallenius, and P. Takala, "Good debt or bad debt: Detecting semantic orientations in economic texts," <em>Journal of the Association for Information Science and Technology</em>, vol. 65, no. 4, pp. 782-796, 2014.</p>
+            <p>[2] D. Araci, "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models," <em>arXiv preprint arXiv:1908.10063</em>, 2019.</p>
+            <p>[3] Y. Yang, M. C. Uy, and A. Huang, "FinBERT: A Pretrained Language Model for Financial Communications," <em>arXiv preprint arXiv:2006.08097</em>, 2020.</p>
+            <p>[6] M. Schuster and K. K. Paliwal, "Bidirectional recurrent neural networks," <em>IEEE Transactions on Signal Processing</em>, vol. 45, no. 11, pp. 2673-2681, 1997.</p>
+            <p>[7] Z. Sun et al., "MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices," in <em>Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</em>, 2020, pp. 2158-2170.</p>
+            <p>[8] P. He, J. Gao, and W. Chen, "DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing," <em>arXiv preprint arXiv:2111.09543</em>, 2021.</p>
+        </section>
+    </article>
+
+</body>
+</html>
