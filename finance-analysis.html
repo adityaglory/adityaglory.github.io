@@ -86,7 +86,7 @@
             <p>The primary data source for this study is the Financial PhraseBank dataset [1], categorized into Negative, Neutral, and Positive sentiments. Initial exploratory data analysis revealed a severe class imbalance, heavily dominated by the "Neutral" class (1,391 samples) while the "Negative" class was severely underrepresented (303 samples).</p>
             
             <div class="image-container">
-                <p class="image-placeholder"> </p>
+                <img src="images/sentiment distribution.png" alt="Distribusi klasifikasi sentimen awal" class="w-full h-auto">
                 <p class="text-sm mt-2 text-gray-400">Figure 1. Initial sentiment classification distribution showing severe class imbalance.</p>
             </div>
 
@@ -186,18 +186,18 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="image-container mt-0">
-                    <p class="image-placeholder"></p>
-                    <p class="text-sm mt-2 text-gray-400">Figure 2. BiLSTM Confusion Matrix</p>
-                </div>
-                <div class="image-container mt-0">
-                    <p class="image-placeholder">[Insert Image: Fig_6_MobileBERT_CM.png]</p>
-                    <p class="text-sm mt-2 text-gray-400">Figure 3. MobileBERT Confusion Matrix</p>
-                </div>
-                <div class="image-container mt-0">
-                    <p class="image-placeholder">[Insert Image: Fig_8_DeBERTa_CM.png]</p>
-                    <p class="text-sm mt-2 text-gray-400">Figure 4. DeBERTa-v3 Confusion Matrix (Mode Collapse)</p>
-                </div>
+                <img src="images/cm bilstm.png" alt="BiLSTM Confusion Matrix" class="w-full h-auto rounded-lg">
+                <p class="text-sm mt-2 text-gray-400">Figure 2. BiLSTM Confusion Matrix</p>
             </div>
+            <div class="image-container mt-0">
+                <img src="images/cm mobilebert.png" alt="MobileBERT Confusion Matrix" class="w-full h-auto rounded-lg">
+                <p class="text-sm mt-2 text-gray-400">Figure 3. MobileBERT Confusion Matrix</p>
+            </div>
+            <div class="image-container mt-0">
+                <img src="images/cm deberta.png" alt="DeBERTa-v3 Confusion Matrix" class="w-full h-auto rounded-lg">
+                <p class="text-sm mt-2 text-gray-400">Figure 4. DeBERTa-v3 Confusion Matrix (Mode Collapse)</p>
+            </div>
+        </div>
 
             <h3>4.2. Diagnostic Analysis and Mode Collapse</h3>
             <p>MobileBERT's self-attention mechanism effectively captured long-range dependencies while remaining highly optimized for the 8GB VRAM constraint. The RNN-based BiLSTM model fell victim to semantic traps; constrained by its left-to-right processing, it mistakenly classified complex negative statements as positive because it missed trailing negative context.</p>
