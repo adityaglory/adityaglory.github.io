@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Augmentation & Dataset Balancing Using GANs - Glory Aditya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #a3a3a3;
+            line-height: 1.8;
+        }
+        h1, h2, h3 {
+            color: #f3f4f6;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        h1 { font-size: 2.25rem; line-height: 1.2; }
+        h2 { font-size: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.25rem; }
+        p { margin-bottom: 1.25rem; text-align: justify; }
+        a { color: #60a5fa; text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #93c5fd; }
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+            background-color: #171717;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px dashed #404040;
+        }
+        .image-placeholder {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background-color: #171717;
+        }
+        th, td {
+            border: 1px solid #404040;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        th { background-color: #262626; color: #f3f4f6; font-weight: 500; }
+        .references {
+            font-size: 0.875rem;
+            background-color: #121212;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 3rem;
+        }
+        .references p { margin-bottom: 0.5rem; text-align: left; }
+    </style>
+</head>
+<body class="max-w-4xl mx-auto p-6 md:p-12">
+
+    <article>
+        <header class="mb-12 text-center">
+            <h1 class="text-gray-100">Data Augmentation and Dataset Balancing Techniques Using Generative Adversarial Networks</h1>
+            <p class="text-sm text-gray-500 mt-4">By Glory Aditya Jauzaulbahi</p>
+        </header>
+
+        <section>
+            <h2>Abstract</h2>
+            <p>The availability of imbalanced datasets presents a significant challenge in the development of optimal intelligent systems, hindering the performance of classifier models particularly in recognizing minority classes [3]. This research explores the use of generative models, specifically Generative Adversarial Networks (GAN) and Variational Autoencoders (VAE), as data augmentation techniques. Both models generated synthetic data to produce balanced datasets. Evaluation across three classifier models (SVM, Random Forest, KNN) indicated that GAN outperforms VAE in generating high-quality synthetic data, evidenced by a superior Fréchet Inception Distance (FID) score of 0.2249. Notably, the KNN model achieved a 91% accuracy and 90% F1-Score on the GAN-augmented dataset, a significant improvement from its 82% baseline.</p>
+        </section>
+
+        <section>
+            <h2>1. Introduction</h2>
+            <p>The application of Artificial Intelligence (AI) has become increasingly widespread, particularly in the medical domain where intelligent systems are integrated to provide faster and more accurate disease diagnoses [1]. However, developing effective systems requires high-quality, sufficient data. Data acquisition in real-world scenarios often faces severe obstacles, including modality limitations, rare disease sample scarcity, and strict ethical constraints regarding data privacy [2].</p>
+            <p>These constraints frequently result in imbalanced datasets, where the majority class significantly outweighs the minority class. Consequently, learning models become biased, leading to high overall accuracy but poor sensitivity for the crucial minority cases [5]. To mitigate these issues, this study investigates the application of Generative Adversarial Networks (GAN) to synthetically augment minority class representations, ensuring a more robust and accurate diagnostic system.</p>
+        </section>
+
+        <section>
+            <h2>2. Methodology</h2>
+            <h3>2.1. Dataset and Preprocessing</h3>
+            <p>The dataset utilized in this research comprises 251 ultrasound audio files sourced from previous academic literature [23]. It exhibits a distinct class imbalance containing 114 instances of arterial data (minority class) and 137 non-arterial instances (majority class).</p>
+            
+            <div class="image-container">
+                <p class="image-placeholder">[Insert Image: Fig_1_Flowchart.png]</p>
+                <p class="text-sm mt-2 text-gray-400">Figure 1. Flowchart of Proposed Method</p>
+            </div>
+
+            <p>To extract important features from the audio data, Short Time Fourier Transform (STFT) was applied to convert the 1D signal data into 2D spectrogram images. These spectrograms were then resized to 128x128 pixels, converted to grayscale, and normalized to a [-1, 1] range to prepare them for neural network training.</p>
+
+            <div class="image-container">
+                <p class="image-placeholder">[Insert Image: Fig_8_Spectrogram_Arterial.png]</p>
+                <p class="text-sm mt-2 text-gray-400">Figure 2. Spectrogram Visualization of Arterial Data</p>
+            </div>
+
+            <h3>2.2. Generative Model Architectures</h3>
+            <p>Two advanced generative architectures were trained to synthesize the minority class: Deep Convolutional GAN (DCGAN) and VAE. The DCGAN architecture relies on a generator that upsamples random noise vectors through transpose convolutional layers, while a discriminator network competes to distinguish real from fake data [10], [13]. Conversely, the VAE maps input data into a lower-dimensional probabilistic latent space and reconstructs it [16]. Both models were tasked with generating 23 synthetic arterial samples to equalize the class distribution.</p>
+
+            <div class="image-container">
+                <p class="image-placeholder">[Insert Image: Fig_13_Generator_Discriminator_Loss.png]</p>
+                <p class="text-sm mt-2 text-gray-400">Figure 3. Generator and Discriminator Losses During Training</p>
+            </div>
+
+            <h3>2.3. Classification Strategy</h3>
+            <p>Following augmentation, the datasets were split into an 80:20 training and testing ratio. Three distinct machine learning algorithms were deployed: Support Vector Machine (SVM), Random Forest, and K-Nearest Neighbors (KNN). Extensive hyperparameter tuning was conducted via Grid Search cross-validation to identify the optimal configuration for each classifier.</p>
+        </section>
+
+        <section>
+            <h2>3. Results and Discussion</h2>
+            <h3>3.1. Generative Model Performance</h3>
+            <p>The quality of the synthetically generated data was quantified using several metrics, primarily Structural Similarity Index Measure (SSIM) and Fréchet Inception Distance (FID) [18], [20]. As shown in Table 1, while both models demonstrated similar structural preservation (SSIM), the GAN achieved a significantly lower FID score (0.2249) compared to the VAE (0.86). A lower FID score mathematically indicates that the distribution of the synthetic data generated by the GAN is substantially closer to the real-world ground truth data.</p>
+
+            <table>
+                <caption>Table 1. Generative Models Evaluation Metrics</caption>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>GAN Results</th>
+                        <th>VAE Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SSIM</td>
+                        <td>0.5655</td>
+                        <td>0.5600</td>
+                    </tr>
+                    <tr>
+                        <td>FID</td>
+                        <td>0.2249</td>
+                        <td>0.8600</td>
+                    </tr>
+                    <tr>
+                        <td>Inception Score</td>
+                        <td>1.4220 ± 0.1626</td>
+                        <td>1.3400 ± 0.2200</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="image-container">
+                <p class="image-placeholder">[Insert Image: Fig_16_GAN_Generated_Data.png]</p>
+                <p class="text-sm mt-2 text-gray-400">Figure 4. Sample of GAN Generated Data</p>
+            </div>
+
+            <h3>3.2. Classifier Enhancements</h3>
+            <p>The implementation of synthetic data yielded distinct impacts on the classification models. On the original imbalanced dataset, the KNN model struggled, achieving an overall accuracy of just 82% and a precision of 70% for the minority class. However, when trained on the GAN-augmented dataset, KNN experienced a remarkable performance surge, reaching 91% accuracy and a 90% F1-Score for arterial data.</p>
+            <p>Interestingly, the VAE-augmented dataset caused a performance drop across all three models. This decline highlights that VAE tends to produce smoother, less diverse samples that fail to capture the critical variability of the original data distribution [17]. Overall, GAN-generated samples proved immensely superior in providing feature spaces that enhanced model generalization without inducing catastrophic overfitting.</p>
+        </section>
+
+        <section>
+            <h2>4. Conclusion</h2>
+            <p>This study demonstrates the critical efficacy of Generative Adversarial Networks for addressing class imbalance within medical datasets. Through empirical evaluation, GAN-generated synthetic data consistently outperformed VAE-generated data across structural metrics and downstream classification tasks. The findings emphasize that utilizing advanced generative techniques is a highly viable methodology to build equitable, robust, and highly accurate intelligent diagnostic systems.</p>
+        </section>
+
+        <section class="references">
+            <h3 class="mt-0 text-gray-300">References</h3>
+            <p>[1] K. Mikołajczyk, W. Dolar, and L. Bruna, "Deep learning for computer vision: A brief review," <em>Journal of Visual Communication and Image Representation</em>, vol. 54, pp. 72-88, 2019.</p>
+            <p>[2] Y. Li, Z. Chen, and J. Wang, "Improved GAN for Class Imbalance in Medical Imaging," <em>IEEE Transactions on Medical Imaging</em>, vol. 42, no. 3, pp. 1246-1258, 2023.</p>
+            <p>[3] A. Fernández et al., "Big data with class imbalance: A review," <em>IEEE Access</em>, vol. 8, pp. 59845-59871, 2020.</p>
+            <p>[5] H. Zhang, Y. Li, and D. Wang, "Machine learning models for classifying imbalanced class datasets using ensemble learning," <em>IEEE Transactions on Knowledge and Data Engineering</em>, vol. 35, no. 1, pp. 202-212, 2023.</p>
+            <p>[10] I. J. Goodfellow et al., "Generative Adversarial Networks," 2014. [Online]. Available: https://arxiv.org/abs/1406.2661.</p>
+            <p>[13] S. Arniriparian et al., "A Fusion of Deep Convolutional Generative Adversarial Networks and Sequence to Sequence Autoencoders for Acoustic Scene Classification," in <em>EUSIPCO</em>, 2018, pp. 977-981.</p>
+            <p>[16] D. P. Kingma and M. Welling, "Auto-encoding variational bayes," 2013. [Online]. Available: https://arxiv.org/abs/1312.6114.</p>
+            <p>[18] Z. Wang et al., "Image quality assessment: From error visibility to structural similarity," <em>IEEE Transactions on Image Processing</em>, vol. 13, no. 4, pp. 600-612, 2004.</p>
+            <p>[20] M. Heusel et al., "GANs trained by a two time-scale update rule converge to a local Nash equilibrium," 2018. [Online]. Available: https://arxiv.org/abs/1706.08500.</p>
+            <p>[23] D. Santoso, "Peningkatan Kinerja Deteksi Bunyi Doppler Arteri Wasir...", Ph.D. dissertation, Universitas Gadjah Mada, Yogyakarta, Indonesia, 2024.</p>
+        </section>
+    </article>
+
+</body>
+</html>
